@@ -12,6 +12,9 @@
   "repository": "https://github.com/zerosix-studio/cryptoetf-plugin",
   "license": "MIT",
   "privacyPolicyUrl": "https://cryptoetf.today/en/privacy",
+  "termsOfServiceUrl": "https://cryptoetf.today/en/terms",
+  "documentationUrl": "https://github.com/zerosix-studio/cryptoetf-plugin#readme",
+  "supportUrl": "https://github.com/zerosix-studio/cryptoetf-plugin/issues",
   "keywords": [
     "crypto",
     "etf",
