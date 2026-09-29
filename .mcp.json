@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "cryptoetf": {
+      "type": "http",
+      "url": "https://mcp.cryptoetf.today/api/mcp"
+    }
+  }
+}

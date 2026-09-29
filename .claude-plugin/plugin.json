@@ -1,0 +1,11 @@
+{
+  "name": "cryptoetf",
+  "displayName": "CryptoETF Flows",
+  "version": "1.0.0",
+  "description": "Daily and weekly net flows for US spot crypto ETFs across 13 assets, the CEFI sentiment index and spot prices, turned into clear market briefs. Data from cryptoetf.today.",
+  "author": { "name": "ZeroSix Studio", "url": "https://zerosix.studio" },
+  "homepage": "https://cryptoetf.today",
+  "repository": "https://github.com/zerosix-studio/cryptoetf-plugin",
+  "license": "MIT",
+  "keywords": ["crypto", "etf", "bitcoin", "ethereum", "etf-flows", "market-data", "finance"]
+}
