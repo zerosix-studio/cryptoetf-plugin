@@ -2,7 +2,7 @@
 
 Institutional demand for crypto, read from the money moving through US spot crypto ETFs. This plugin connects to the CryptoETF data service from [cryptoetf.today](https://cryptoetf.today) and adds skills that turn the raw numbers into short, accurate market briefs.
 
-It covers thirteen assets: **BTC, ETH, SOL, XRP, HYPE, DOGE, LINK, AVAX, HBAR, LTC, BNB, DOT and SUI**. Figures are daily net flows in US dollars, taken from the issuers' own daily reports; for the smaller complexes, where no market-wide aggregator exists, they are computed from each issuer's fund data.
+It covers sixteen assets: **BTC, ETH, SOL, XRP, HYPE, DOGE, LINK, AVAX, HBAR, LTC, BNB, DOT, SUI, NEAR, TRX and ZEC**. Figures are daily net flows in US dollars, taken from the issuers' own daily reports; for the smaller complexes, where no market-wide aggregator exists, they are computed from each issuer's fund data.
 
 Published by [ZeroSix Studio](https://zerosix.studio), the team behind cryptoetf.today.
 
@@ -14,7 +14,7 @@ Published by [ZeroSix Studio](https://zerosix.studio), the team behind cryptoetf
 | **etf-flows-daily** skill | A brief on the latest published day: total net flow, leaders, laggards |
 | **etf-flows-weekly** skill | A seven-day recap with assets ranked by net flow and breadth |
 | **etf-flow-history** skill | Trend, streaks and momentum for one asset, or a side-by-side comparison |
-| **cefi-sentiment** skill | Reads the CEFI index (0–100, 50 = neutral) and checks it against recent flows |
+| **cefi-sentiment** skill | Reads the CEFI index (0–100, 50 = zero net flow) with its flow, trend and breadth components and checks it against recent flows |
 | **/flows** and **/weekly** commands | One-step shortcuts for the daily brief and the weekly recap |
 
 ## Use it

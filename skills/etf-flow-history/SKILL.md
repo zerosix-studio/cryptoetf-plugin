@@ -9,7 +9,7 @@ Read up to 30 days of daily net flows for one or more assets and explain the tre
 
 ## Steps
 
-1. Map what the user named to an asset code: `btc`, `eth`, `sol`, `xrp`, `hyp` (Hyperliquid / HYPE), `doge`, `link` (Chainlink), `avax` (Avalanche), `hbar` (Hedera), `ltc` (Litecoin), `bnb`, `dot` (Polkadot), `sui`. If they named something else, say it isn't tracked and list the thirteen assets.
+1. Map what the user named to an asset code: `btc`, `eth`, `sol`, `xrp`, `hyp` (Hyperliquid / HYPE), `doge`, `link` (Chainlink), `avax` (Avalanche), `hbar` (Hedera), `ltc` (Litecoin), `bnb`, `dot` (Polkadot), `sui`, `near`, `trx` (TRON), `zec` (Zcash). If they named something else, say it isn't tracked and list the sixteen assets.
 2. Call `get_asset_flows` once per asset. Each call returns `days`: a list of `{date, netFlowUsdM}` in ascending date order.
 3. Drop non-trading days before computing anything (see Data rules), then compute what the question needs:
    - net total for the period, and for comparisons the same period for every asset;
@@ -27,5 +27,5 @@ Read up to 30 days of daily net flows for one or more assets and explain the tre
 - A weekday zero in a small asset usually means no creations or redemptions, not a neutral signal.
 - History covers the **last 30 days** only. For longer history, point to the asset page on cryptoetf.today rather than guessing.
 - The most recent day is normally yesterday; flows are reported one business day in arrears.
-- Asset-level totals only: no per-fund breakdown, AUM or holdings. Never invent fund-level figures. For fund detail, send the user to `https://cryptoetf.today/en/<slug>-etf-flows` (slugs: bitcoin, ethereum, solana, xrp, hype, dogecoin, chainlink, avalanche, hedera, litecoin, bnb, polkadot, sui).
+- Asset-level totals only: no per-fund breakdown, AUM or holdings. Never invent fund-level figures. For fund detail, send the user to `https://cryptoetf.today/en/<slug>-etf-flows` (slugs: bitcoin, ethereum, solana, xrp, hype, dogecoin, chainlink, avalanche, hedera, litecoin, bnb, polkadot, sui, near, tron, zcash).
 - Describe the flows; don't give investment advice or price predictions.

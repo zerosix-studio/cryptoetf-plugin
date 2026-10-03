@@ -27,5 +27,5 @@ Offer a table when more than five assets moved or when the user wants something 
 - Positive plus negative days is the number of days with non-zero flow. Trading days beyond that had no creations or redemptions, which is common for small funds.
 - The latest published day is normally yesterday: flows are reported one business day in arrears.
 - `HYP` is Hyperliquid (token ticker HYPE).
-- Asset-level totals only: no per-fund breakdown, AUM or holdings. Don't invent fund figures. For fund detail, send the user to the asset's page, `https://cryptoetf.today/en/<slug>-etf-flows` (slugs: bitcoin, ethereum, solana, xrp, hype, dogecoin, chainlink, avalanche, hedera, litecoin, bnb, polkadot, sui).
+- Asset-level totals only: no per-fund breakdown, AUM or holdings. Don't invent fund figures. For fund detail, send the user to the asset's page, `https://cryptoetf.today/en/<slug>-etf-flows` (slugs: bitcoin, ethereum, solana, xrp, hype, dogecoin, chainlink, avalanche, hedera, litecoin, bnb, polkadot, sui, near, tron, zcash).
 - Describe the flows; don't give investment advice or price predictions.
