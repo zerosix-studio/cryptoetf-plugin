@@ -26,7 +26,7 @@ Add the plugin, then connect the CryptoETF connector on the plugin's **Connector
 - "Compare Bitcoin and Ethereum ETF flows over the past month."
 - "Is ETF sentiment risk-on or risk-off right now?"
 
-The skills keep the data honest: flows are reported one business day in arrears, so a brief names the actual trading day instead of calling it "today"; weekends are excluded from streaks and averages; and no per-fund figures are invented, because the connector reports asset-level totals only. Fund-level detail and longer history live on [cryptoetf.today](https://cryptoetf.today).
+The skills keep the data honest: flows are reported one business day in arrears, so a brief names the actual trading day instead of calling it "today"; weekends are excluded from streaks and averages; and fund figures (IBIT, FBTC, ETHA and the rest) come only from the connector's per-fund data, with a fund that hasn't reported yet called out rather than counted as zero. Fund size (AUM), coins held and fees come from the connector's fund directory. History beyond 30 days lives on [cryptoetf.today](https://cryptoetf.today).
 
 ## Data and privacy
 

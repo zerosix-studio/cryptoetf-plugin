@@ -27,5 +27,5 @@ Offer a table when more than five assets moved or when the user wants something 
 - Positive plus negative days is the number of days with non-zero flow. Trading days beyond that had no creations or redemptions, which is common for small funds.
 - The latest published day is normally yesterday: flows are reported one business day in arrears.
 - `HYP` is Hyperliquid (token ticker HYPE).
-- Asset-level totals only: no per-fund breakdown, AUM or holdings. Don't invent fund figures. For fund detail, send the user to the asset's page, `https://cryptoetf.today/en/<slug>-etf-flows` (slugs: bitcoin, ethereum, solana, xrp, hype, dogecoin, chainlink, avalanche, hedera, litecoin, bnb, polkadot, sui, near, tron, zcash).
+- `get_weekly_analytics` gives asset-level totals. For a fund's week, call `get_fund_flows` for its asset and add up that fund's `netFlowUsdM` over the days inside `from`–`to`; a `null` day means the fund hasn't reported, so say the total is partial. Current net assets (AUM), coins held, sponsor fees and listing dates come from `get_funds`: one snapshot with its date, not a history. `coinsHeld` is null for issuers that don't publish holdings in coins (Fidelity, Grayscale, Franklin Templeton, Canary, WisdomTree); don't fill it in from the price. Don't invent fund figures.
 - Describe the flows; don't give investment advice or price predictions.

@@ -1,6 +1,6 @@
 ---
 name: etf-flow-history
-description: Analyze the recent flow history of a crypto ETF asset or compare several. Use when the user asks about the trend, streaks or momentum of Bitcoin, Ethereum, Solana, XRP or other crypto ETF flows over recent weeks, wants two assets compared, or asks for a chart of daily ETF flows.
+description: Analyze the recent flow history of a crypto ETF asset or fund, or compare several. Use when the user asks about the trend, streaks or momentum of Bitcoin, Ethereum, Solana, XRP or other crypto ETF flows over recent weeks, wants two assets or two funds (such as IBIT and FBTC) compared, or asks for a chart of daily ETF flows.
 ---
 
 # Crypto ETF flow history and comparison
@@ -10,7 +10,7 @@ Read up to 30 days of daily net flows for one or more assets and explain the tre
 ## Steps
 
 1. Map what the user named to an asset code: `btc`, `eth`, `sol`, `xrp`, `hyp` (Hyperliquid / HYPE), `doge`, `link` (Chainlink), `avax` (Avalanche), `hbar` (Hedera), `ltc` (Litecoin), `bnb`, `dot` (Polkadot), `sui`, `near`, `trx` (TRON), `zec` (Zcash). If they named something else, say it isn't tracked and list the sixteen assets.
-2. Call `get_asset_flows` once per asset. Each call returns `days`: a list of `{date, netFlowUsdM}` in ascending date order.
+2. Call `get_asset_flows` once per asset. Each call returns `days`: a list of `{date, netFlowUsdM}` in ascending date order. If the question is about funds (IBIT vs FBTC, which issuer is gaining share), call `get_fund_flows` for the asset instead and read each fund's series from its `days`.
 3. Drop non-trading days before computing anything (see Data rules), then compute what the question needs:
    - net total for the period, and for comparisons the same period for every asset;
    - the current streak of inflow or outflow days and the longest streak in the window;
@@ -27,5 +27,5 @@ Read up to 30 days of daily net flows for one or more assets and explain the tre
 - A weekday zero in a small asset usually means no creations or redemptions, not a neutral signal.
 - History covers the **last 30 days** only. For longer history, point to the asset page on cryptoetf.today rather than guessing.
 - The most recent day is normally yesterday; flows are reported one business day in arrears.
-- Asset-level totals only: no per-fund breakdown, AUM or holdings. Never invent fund-level figures. For fund detail, send the user to `https://cryptoetf.today/en/<slug>-etf-flows` (slugs: bitcoin, ethereum, solana, xrp, hype, dogecoin, chainlink, avalanche, hedera, litecoin, bnb, polkadot, sui, near, tron, zcash).
+- `get_fund_flows` breaks one asset down by fund (IBIT, FBTC, ETHA and the rest) for the last 30 days: each day lists `ticker`, `issuer` and `netFlowUsdM` for every fund trading that day, plus `totalUsdM`. `netFlowUsdM: null` means there is no figure for the fund that day yet: say it hasn't reported, don't count it as zero. Current net assets (AUM), coins held, sponsor fees and listing dates come from `get_funds`: one snapshot with its date, not a history. `coinsHeld` is null for issuers that don't publish holdings in coins (Fidelity, Grayscale, Franklin Templeton, Canary, WisdomTree); don't fill it in from the price. Never invent a fund figure that isn't in a response. `get_fund_flows` lists trading days only. For longer history, send the user to `https://cryptoetf.today/en/<slug>-etf-flows` (slugs: bitcoin, ethereum, solana, xrp, hype, dogecoin, chainlink, avalanche, hedera, litecoin, bnb, polkadot, sui, near, tron, zcash).
 - Describe the flows; don't give investment advice or price predictions.
