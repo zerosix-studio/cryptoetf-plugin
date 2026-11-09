@@ -10,10 +10,11 @@ Published by [ZeroSix Studio](https://zerosix.studio), the team behind cryptoetf
 
 | Component | What it does |
 |---|---|
-| **CryptoETF connector** | Read-only data service at `mcp.cryptoetf.today`: latest flows, 30-day history per asset, weekly analytics, the CEFI sentiment index and spot prices |
+| **CryptoETF connector** | Read-only data service at `mcp.cryptoetf.today`: latest flows, 30-day history per asset and per fund, weekly analytics, fund AUM, coins held, staking, issuer fee revenue, holders' average entry, ETF demand against mined bitcoin, the CEFI sentiment index and spot prices |
 | **etf-flows-daily** skill | A brief on the latest published day: total net flow, leaders, laggards |
 | **etf-flows-weekly** skill | A seven-day recap with assets ranked by net flow and breadth |
 | **etf-flow-history** skill | Trend, streaks and momentum for one asset, or a side-by-side comparison |
+| **etf-fund-metrics** skill | What sits inside the funds: coins held and share of supply, holders' estimated average entry and P&L, bitcoin ETF demand against new supply, staking status and yields, issuer fee revenue |
 | **cefi-sentiment** skill | Reads the CEFI index (0–100, 50 = zero net flow) with its flow, trend and breadth components and checks it against recent flows |
 | **/flows** and **/weekly** commands | One-step shortcuts for the daily brief and the weekly recap |
 
@@ -25,6 +26,9 @@ Add the plugin, then connect the CryptoETF connector on the plugin's **Connector
 - "Which asset had the strongest week of inflows?"
 - "Compare Bitcoin and Ethereum ETF flows over the past month."
 - "Is ETF sentiment risk-on or risk-off right now?"
+- "What share of all bitcoin do the ETFs hold?"
+- "Are bitcoin ETF holders in profit or underwater?"
+- "Which Solana ETFs stake, and at what yield?"
 
 The skills keep the data honest: flows are reported one business day in arrears, so a brief names the actual trading day instead of calling it "today"; weekends are excluded from streaks and averages; and fund figures (IBIT, FBTC, ETHA and the rest) come only from the connector's per-fund data, with a fund that hasn't reported yet called out rather than counted as zero. Fund size (AUM), coins held and fees come from the connector's fund directory. History beyond 30 days lives on [cryptoetf.today](https://cryptoetf.today).
 
