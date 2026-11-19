@@ -1,7 +1,7 @@
 {
   "name": "cryptoetf",
   "displayName": "CryptoETF Flows",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Daily and weekly net flows for US spot crypto ETFs across 16 assets and every fund behind them, fund AUM, coins held against circulating supply, staking inside the funds, issuer fee revenue, holders' average entry, the CEFI sentiment index and spot prices, turned into clear market briefs. Data from cryptoetf.today.",
   "icon": "./.claude-plugin/icon.png",
   "author": {

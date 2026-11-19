@@ -34,7 +34,7 @@ The skills keep the data honest: flows are reported one business day in arrears,
 
 ## Data and privacy
 
-The plugin runs no code on your machine. The only network destination is the CryptoETF service at `https://mcp.cryptoetf.today/api/mcp`, operated by ZeroSix Studio. Each request carries only the tool name and, at most, an asset ticker; conversation content, files and credentials are never sent.
+The plugin runs no code on your machine. The only network destination is the CryptoETF service at `https://mcp.cryptoetf.today/mcp`, operated by ZeroSix Studio. Each request carries only the tool name and, at most, an asset ticker; conversation content, files and credentials are never sent.
 
 The service logs standard request metadata (IP address, time, endpoint) for 30 days to operate the service and enforce a limit of 60 requests per minute per IP. Nothing is sold or shared with third parties. Full policy: [cryptoetf.today/en/privacy](https://cryptoetf.today/en/privacy).
 
